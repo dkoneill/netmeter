@@ -38,7 +38,7 @@ def fping(sender, prefix, config):
         print(f"Split line: {outer}")
         if len(outer) > 3:
             for n in range(1,4):
-                key = f"{prefix}.fping.{basename}.{outer[n]}"
+                key = f"{basename}.{outer[n]}"
                 val = outer[n+3]
                 if val.endswith('%'):
                     val = val[:-1]
@@ -48,7 +48,7 @@ def fping(sender, prefix, config):
 
         if len(outer) > 9:
             for n in range(7,10):
-                key = f"{prefix}.fping.{basename}.{outer[n]}"
+                key = f"{basename}.{outer[n]}"
                 val = outer[n+3]
 
                 print(f"Added: {key} = {val}")
