@@ -3,6 +3,7 @@ from ruamel.yaml import YAML
 DEFAULT_DELAY = 30
 
 TARGETS = 'targets'
+COUNT = 'count'
 HOST = 'host'
 PORT = 'port'
 USER = 'user'
@@ -68,7 +69,6 @@ class Configuration(object):
     def __init__(self, config_file):
         with open(config_file) as f:
             self.data = YAML(typ='safe').load(f)
-        print(f"Configuration:\n{self.data}")
         self.sender = self.data[SENDER]
         self.prefix = self.data[PREFIX]
         self.delay = int(self.data.get(DELAY)) or DEFAULT_DELAY

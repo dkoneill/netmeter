@@ -30,7 +30,7 @@ def measure_periodically(config_file, config_extractor, command):
             sender = init_sender(config)
             sender.start()
 
-            print(f"Starting command: {command} with sender: {sender}, prefix: {prefix}, and config: {command_config}")
+            # print(f"Starting command: {command} with sender: {sender}, prefix: {prefix}, and config: {command_config}")
             command(sender, prefix, command_config)
 
             delay = config.delay
