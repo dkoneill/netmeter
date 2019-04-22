@@ -70,7 +70,9 @@ class Configuration(object):
         with open(config_file) as f:
             self.data = YAML(typ='safe').load(f)
         self.sender = self.data[SENDER]
-        self.delay = int(self.data.get(DELAY)) or DEFAULT_DELAY
+
+    def get_delay(self):
+        return self.data.get(DELAY) or DEFAULT_DELAY
 
     def get_prefix(self):
         return self.data[PREFIX]

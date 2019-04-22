@@ -33,7 +33,7 @@ def measure_periodically(config_file, config_extractor, command):
             # print(f"Starting command: {command} with sender: {sender}, prefix: {prefix}, and config: {command_config}")
             command(sender, prefix, command_config)
 
-            delay = config.delay
+            delay = config.get_delay()
             time.sleep(delay)
     except KeyboardInterrupt:
         print("Shutting down")
