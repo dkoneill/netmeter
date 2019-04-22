@@ -39,7 +39,7 @@ def fping(sender, prefix, config):
         now = int(time.time())
 
         # print(f"Split line: {outer}")
-        if len(outer) > 3:
+        if len(outer) > 9:
             for n in range(1,4):
                 key = f"{basename}.{outer[n]}"
                 val = outer[n+3]
@@ -49,7 +49,6 @@ def fping(sender, prefix, config):
                 print(f"Added: {key} = {val}")
                 sender.send_raw(f"{key} {val} {now}")
 
-        if len(outer) > 9:
             for n in range(7,10):
                 key = f"{basename}.{outer[n]}"
                 val = outer[n+3]

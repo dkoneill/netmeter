@@ -24,7 +24,7 @@ def measure_periodically(config_file, config_extractor, command):
         while True:
             config = Configuration(config_file)
 
-            prefix = config.prefix
+            prefix = config.get_prefix()
             command_config = config_extractor(config)
 
             sender = init_sender(config)
