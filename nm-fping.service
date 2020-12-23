@@ -1,0 +1,15 @@
+#
+# Installed in /lib/systemd/system/netmeter.service
+#
+[Unit]
+Description=Netmeter fping monitoring package
+After=network.service
+
+[Service]
+User=tommy
+Type=simple
+ExecStart=/usr/bin/python3 /home/tommy/.local/bin/netmeter-fping /home/tommy/nm-fping.config
+Restart=always
+RestartSec=90
+[Install]
+WantedBy=multi-user.target

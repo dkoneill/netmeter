@@ -9,7 +9,7 @@ DEFAULT_TARGETS = ['8.8.8.8']
 
 def fping(sender, prefix, config):
     ping_count = config.get(COUNT) or DEFAULT_COUNT
-    command=['/usr/sbin/fping', '-c', str(ping_count), '-q']
+    command=['/usr/bin/fping', '-c', str(ping_count), '-q']
     command.extend(config[TARGETS] or DEFAULT_TARGETS)
 
     records = {}
